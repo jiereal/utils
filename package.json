@@ -1,8 +1,8 @@
 {
-  "name": "utils",
+  "name": "vuex_helper",
   "version": "0.0.1",
   "description": "tools function",
-  "main": "vuexHelper.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/jiereal/utils.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jiereal/utils/issues"
   },

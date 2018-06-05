@@ -1,4 +1,5 @@
 import lodash from 'lodash';
+import {createNamespacedHelpers} from 'vuex';
 
 function createMutations(initialState) {
     return Object.keys(initialState).reduce((obj, key) => {
@@ -13,24 +14,21 @@ function createMutations(initialState) {
     }, {});
 }
 
-export default function (vuex) {
-    const {createNamespacedHelpers} = vuex;
-    return function createNamespacedStore(name, {state: initialState, mutations = {}, actions = {}, getters = {}}) {
-        const {mapMutations, mapState, mapActions, mapGetters} = createNamespacedHelpers(name);
-        const _mutations = {
-            ...createMutations(initialState),
-            ...mutations
-        };
-        return {
-            namespaced: true,
-            state: lodash.cloneDeep(initialState),
-            getters,
-            actions,
-            mutations: _mutations,
-            mapState,
-            mapMutations,
-            mapGetters,
-            mapActions
-        };
-    }
-};
+export default function createNamespacedStore(name, {state: initialState, mutations = {}, actions = {}, getters = {}}) {
+    const {mapMutations, mapState, mapActions, mapGetters} = createNamespacedHelpers(name);
+    const _mutations = {
+        ...createMutations(initialState),
+        ...mutations
+    };
+    return {
+        namespaced: true,
+        state: lodash.cloneDeep(initialState),
+        getters,
+        actions,
+        mutations: _mutations,
+        mapState,
+        mapMutations,
+        mapGetters,
+        mapActions
+    };
+}
