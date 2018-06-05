@@ -31,8 +31,8 @@
     store.commit('nameSpace-demo/key1.set', 'key1')
 ```
 
-#Contribution
+# Contribution
 If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/jiereal/vuex_helper/issues) or a [pull request](https://github.com/jiereal/vuex_helper/pulls) .
 
-#License
+# License
 [MIT](https://opensource.org/licenses/MIT)
